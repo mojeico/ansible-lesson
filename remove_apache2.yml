@@ -2,6 +2,7 @@
 
 - hosts: all
   tasks:
+
   - name: update repository 
     apt: 
       update_cache: yes
@@ -9,11 +10,11 @@
   - name: install httpd
     apt:           # module "apt"
       name: apache2  # install apache2 
-      state: latest
+      state: absent
 
   - name: add php support for apache
     apt:
       name: libapache2-mod-php
-      state: latest
+      state: absent
 
 
