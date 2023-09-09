@@ -2,38 +2,17 @@
 
 - hosts: all
   tasks:
-  - name: update repository 
-    apt: 
+
+  - name: install httpd and libapache2-mod-php 
+    #apt:           # module "apt" only for Ubuntu like
+    #dnf:           # module "dnf" only for CentOS like 
+    package:        # module "packege" for all linux-s  
+      name:     
+        - "{{ apache_package }}"             # install apache2
+        - "{{ php_package }}"  # install libapache2-mod-php 
+      state: latest
       update_cache: yes
-    when: ansible_distribution in ["Debian", "Ubuntu"]
-
-  - name: install httpd
-    apt:           # module "apt"
-      name: apache2  # install apache2 
-      state: latest
-    when: ansible_distribution == "Ubuntu"
-
-  - name: add php support for apache
-    apt:
-      name: libapache2-mod-php
-      state: latest
-    when: ansible_distribution == "Ubuntu" 
 
 
-  - name: update repository 
-    dnf: 
-      update_cache: yes
-    when: ansible_distribution in ["CentOS"]
 
-  - name: install httpd
-    dnf:           # module "dnf"
-      name: httpd  # install httpd 
-      state: latest
-    when: ansible_distribution == "CentOS"
-
-  - name: add php support for apache
-    dnf:
-      name: libapache2-mod-php
-      state: latest
-    when: ansible_distribution == "CentOS" 
-
+  
