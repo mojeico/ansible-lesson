@@ -9,10 +9,19 @@
     #dnf:           # module "dnf" only for CentOS like 
     package:        # module "packege" for all linux-s  
       name:     
-        - "{{ apache_package }}"             # install apache2
-        - "{{ php_package }}"  # install libapache2-mod-php 
+        - "{{ apache_package }}"  # install apache2
+        - "{{ php_package }}"     # install libapache2-mod-php 
       state: latest
       update_cache: yes
+
+  - name: copy html web site to ubuntu  
+    tags: site,ubuntu,html
+    copy:         # module copy 
+      src: default_site.html 
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
 
   - name: Print debug
     tags: ubuntu,debug
