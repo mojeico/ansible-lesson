@@ -14,9 +14,9 @@
     - base
   tasks:
 
-    #########################
-    ### WAS MOVED TO ROLE ###
-    #########################
+    #####################################
+    ### WAS MOVED TO BASE ROLE FOLDER ###
+    #####################################
 
 #  - name: install httpd and libapache2-mod-php 
     #apt:           # module "apt" only for Ubuntu like

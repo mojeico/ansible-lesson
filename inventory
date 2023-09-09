@@ -6,5 +6,5 @@
 
 
 [centos]
-64.226.92.189 php_package=php apache_package=httpd
+64.226.92.189 # WAS MOVED TO host_vars FOLDER ->  php_package=php apache_package=httpd
 
