@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  tasks:
+  - name: install httpd
+    apt:           # module "apt"
+      name: apache2  # install apache2 
+
+
