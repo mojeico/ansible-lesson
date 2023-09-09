@@ -13,7 +13,7 @@
   user:
     name: mojeico
     groups: root
-  notify: create_user_mojeico
+  notify: create_user_mojeico # if user was created run create_user_mojeico in handler folder
 
 - name: add ssh key for mojeico user
   tags: centos,ssh
