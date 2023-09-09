@@ -22,6 +22,28 @@
       state: latest
       update_cache: yes
 
+
+  - name: change httpd admin email 
+    lineinfile:     # module lineinfile -> change line in file 
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^ServerAdmin'
+      line: ServerAdmin g.mojeico@gmail.com
+    register: httpd
+
+  - name: restart httpd
+    tags: httpd,centos
+    service:
+      name: httpd
+      state: restarted
+    when: httpd.changed # takes it from  " register: httpd "
+
+  - name: start httpd (CentOS)
+    tags: httpd,centos,apache
+    service:  # module service 
+      name: httpd
+      state: started
+      enabled: yes
+
   - name: Print debug 
     debug:
       msg: Hellow, world! I am CentOS!!!
