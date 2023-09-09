@@ -1,5 +1,10 @@
+[ubuntu]
+
 139.59.138.211  php_package=libapache2-mod-php apache_package=apache2
 188.166.161.167 php_package=libapache2-mod-php  apache_package=apache2
 167.71.46.124 php_package=libapache2-mod-php apache_package=apache2
+
+
+[centos]
 64.226.92.189 php_package=php apache_package=httpd
 

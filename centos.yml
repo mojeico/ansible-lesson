@@ -1,0 +1,29 @@
+---
+
+- hosts: centos
+  pre_tasks:
+  
+  - name: Pretask task
+    debug:
+      msg: ------- PRETASK --------
+
+
+#- hosts: all
+- hosts: centos
+  tasks:
+
+  - name: install httpd and libapache2-mod-php 
+    #apt:           # module "apt" only for Ubuntu like
+    #dnf:           # module "dnf" only for CentOS like 
+    package:        # module "packege" for all linux-s  
+      name:     
+        - "{{ apache_package }}"             # install apache2
+        - "{{ php_package }}"  # install libapache2-mod-php 
+      state: latest
+      update_cache: yes
+
+  - name: Print debug 
+    debug:
+      msg: Hellow, world! I am CentOS!!!
+
+  

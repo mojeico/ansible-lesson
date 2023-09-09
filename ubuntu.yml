@@ -1,9 +1,10 @@
 ---
-
-- hosts: all
+- hosts: ubuntu
+#- hosts: all
   tasks:
 
   - name: install httpd and libapache2-mod-php 
+    tags: ubuntu,install
     #apt:           # module "apt" only for Ubuntu like
     #dnf:           # module "dnf" only for CentOS like 
     package:        # module "packege" for all linux-s  
@@ -13,6 +14,9 @@
       state: latest
       update_cache: yes
 
-
+  - name: Print debug
+    tags: ubuntu,debug
+    debug:
+      msg: Hellow, world! I am Ubuntu!!!
 
   
