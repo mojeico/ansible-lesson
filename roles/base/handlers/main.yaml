@@ -1,4 +1,0 @@
-- name: create_user_mojeico
-  debug:
-    msg: Mojeico user was created 
-
