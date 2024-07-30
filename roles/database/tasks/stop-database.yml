@@ -1,0 +1,7 @@
+
+- name: Stop mariadb
+  tags: stop-database
+  service:
+    state: stopped
+    name: mariadb
+

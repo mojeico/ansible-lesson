@@ -1,0 +1,7 @@
+
+
+
+- hosts: databases
+  become: true
+  roles:
+    - database

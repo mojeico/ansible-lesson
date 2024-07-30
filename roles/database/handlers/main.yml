@@ -1,0 +1,5 @@
+- name: start-database
+  service:
+    enabled: true
+    state: started
+    name: mariadb

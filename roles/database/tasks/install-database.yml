@@ -1,0 +1,6 @@
+- name: Install mariadb
+  tags: database-server
+  apt:
+    name: mariadb-server
+    state: latest
+  notify: start-database

@@ -1,0 +1,10 @@
+
+
+- name: install apache2
+  tags: web-server
+  package:
+    name:
+      - "{{ apache_package }}"
+      - "{{ php_package }}"
+    update_cache: yes
+    state: latest

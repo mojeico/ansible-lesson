@@ -1,0 +1,17 @@
+
+[wev-servers]
+
+35.227.54.230 apache_package=apache2 php_package=libapache2-mod-php
+34.23.126.150 apache_package=apache2 php_package=libapache2-mod-php
+
+[databases]
+34.23.126.150
+35.227.54.230
+34.23.126.150
+34.75.112.98
+
+[centos]
+
+34.41.59.62 apache_package=httpd php_package=php
+
+
