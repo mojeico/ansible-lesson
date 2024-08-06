@@ -7,6 +7,11 @@
 
 - vim .ssh/authorized_keys - add pub key 
 
+ssh 165.22.121.23 -i /Users/glebmojeico/.ssh/do
+
+chmod 600 /Users/glebmojeico/.ssh/do
+
+ssh root@165.22.121.23 -i /Users/glebmojeico/.ssh/do
 
 
 
